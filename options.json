@@ -6,7 +6,7 @@
 
     "onlyAC": true,
     "overwrite": false,
-    "giveUniqueNames" : true,
+    "giveUniqueNames" : false,
 
     "defaultExtension" : ".txt",
     "extensionMapping": {

@@ -31,7 +31,7 @@ const getCodeforcesSubmissions = async () => {
             await crawler.scrapeCodeforces(problem)
 
             problem.fileName = problem.name + (options.giveUniqueNames ? "-" + submissions[i].id : "") + problem.fileExtension
-            problem.filePath = `./${options.codeforcesHandle}/${problem.groupName}`
+            problem.filePath = `./exported_codes/${options.codeforcesHandle}/${problem.groupName}`
             saveFile.saveProblem(problem)
         }
 
@@ -66,7 +66,7 @@ const getAtcoderSubmissions = async () => {
             problem.url = `https://atcoder.jp/contests/${submissions[i].contest_id}/submissions/${submissions[i].id}`
             await crawler.scrapeAtcoder(problem)
             problem.fileName = problem.name + (options.giveUniqueNames ? "-" + submissions[i].id : "") + problem.fileExtension
-            problem.filePath = `./${options.atcoderHandle}/${problem.groupName}`
+            problem.filePath = `./exported_codes/${options.atcoderHandle}/${problem.groupName}`
             saveFile.saveProblem(problem)
         }
 
@@ -125,7 +125,7 @@ const getCodechefSubmissions = async () => {
                     if (problem.isAC === true || options.onlyAC === false) {
                         let id = problem.url.split('/').pop()
                         problem.fileName = problem.name + (options.giveUniqueNames ? "-" + id : "") + problem.fileExtension
-                        problem.filePath = `./${options.codechefHandle}/${problem.groupName}`
+                        problem.filePath = `./exported_codes/${options.codechefHandle}/${problem.groupName}`
                         saveFile.saveProblem(problem)
                     }
 

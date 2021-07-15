@@ -5,9 +5,11 @@ const options = require('../options.json')
 const saveProblem = async (problem) => {
 
 
-    await fs.mkdir(problem.filePath, { recursive: true }, (err) => {
-        if (err) throw err;
-    });
+    try {
+        await fs.promises.mkdir(problem.filePath, { recursive: true });
+    } catch (error) {
+        console.error(err);
+    }
 
     problem.filePath = problem.filePath + '/' + problem.fileName
 
@@ -17,16 +19,18 @@ const saveProblem = async (problem) => {
         if (options.overwrite) {
             fs.writeFile(problem.filePath, problem.sourceText, function (err) {
                 if (err) {
-                    return console.log(err);
+                    return console.error(err);
                 }
                 console.log(`Successfully scraped ${problem.fileName} : ${problem.groupName}`);
             });
+        } else {
+            console.log(`${problem.fileName} : ${problem.groupName} already exists.`);
         }
     } catch (error) {
         //  file doesnt exists
         fs.writeFile(problem.filePath, problem.sourceText, function (err) {
             if (err) {
-                return console.log(err);
+                return console.error(err);
             }
             console.log(`Successfully scraped ${problem.fileName} : ${problem.groupName}`);
         });
