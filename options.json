@@ -5,8 +5,8 @@
     "atcoderMaxPrevDays" : 365,
 
     "onlyAC": true,
-    "keepOnlyACAndOthersSeparate": true,
     "overwrite": false,
+    "giveUniqueNames" : true,
 
     "defaultExtension" : ".txt",
     "extensionMapping": {
