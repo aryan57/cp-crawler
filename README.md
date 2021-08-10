@@ -33,4 +33,4 @@ node main.js
 | **giveUniqueNames**          | `true` if you only want all the codes of the same problem, else `false`. When set to `true` different codes of the same problem will be differentiated using their unique Ids. It will be beneficial to set it to `false`,because generally we are concerned with any one code .
 
 
-TODO: improve codechef, use these apis https://www.codechef.com/viewplaintext/49358071 https://www.codechef.com/recent/user?user_handle=aryan57&page=20
+another method for codechef : use these apis https://www.codechef.com/viewplaintext/49358071 https://www.codechef.com/recent/user?user_handle=aryan57&page=20
